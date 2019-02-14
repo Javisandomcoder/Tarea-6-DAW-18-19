@@ -9,7 +9,7 @@ package libreria;
  *
  * @author javisandom
  */
-public abstract class Producto {
+public abstract class Producto implements Arrayable{
     private String nombre;
     private double precio;
     private String descripcion;
@@ -38,8 +38,16 @@ public abstract class Producto {
     public String getDescripcion() {
         return this.descripcion;
     }
-    
-    /*public String[] toArrayAtribNames(){
-        
-    }*/
+
+    @Override
+    public String[] toArrayAtribNames() {
+        String[] nombAtrib = {"Nombre", "Precio", "Descripción"};
+        return nombAtrib;
+    }
+
+    @Override
+    public String[] toArrayAtribValues() {
+        String[] valorAtrib = {this.getNombre(), Double.toString(this.getPrecio()), this.getDescripcion()};
+        return valorAtrib;
+    }
 }

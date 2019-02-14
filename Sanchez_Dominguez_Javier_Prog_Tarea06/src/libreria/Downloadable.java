@@ -10,5 +10,5 @@ package libreria;
  * @author javisandom
  */
 public interface Downloadable {
-    
+    double descargar(double anchoBanda);
 }

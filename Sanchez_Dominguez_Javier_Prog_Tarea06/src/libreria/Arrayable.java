@@ -10,5 +10,6 @@ package libreria;
  * @author javisandom
  */
 public interface Arrayable {
-    
+    String[] toArrayAtribNames();
+    String[] toArrayAtribValues();
 }
