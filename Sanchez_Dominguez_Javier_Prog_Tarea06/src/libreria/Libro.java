@@ -11,19 +11,20 @@ import java.time.LocalDate;
  *
  * @author javisandom
  */
-public abstract class Libro extends Producto{
+public abstract class Libro extends Producto {
+
     private String autorLibro;
     private int year;//año de publicación del libro
     public static final int MIN_YEAR = 1500;
-    
-    public Libro (String nombre, double precio, String descripcion, String autorLibro, int year)throws IllegalArgumentException{
+
+    public Libro(String nombre, double precio, String descripcion, String autorLibro, int year) throws IllegalArgumentException {
         super(nombre, precio, descripcion);
-        if(year < MIN_YEAR && year > LocalDate.now().getYear()){
+        if (year > MIN_YEAR && year <= LocalDate.now().getYear()) {
             this.autorLibro = autorLibro;
             this.year = year;
-        }else{
-            throw new IllegalArgumentException("Error: parámetros de creación invalidos el año de edición (" +
-                    this.getYear() + ") no está en el rango permitido");
+        } else {
+            throw new IllegalArgumentException("Error: parámetros de creación invalidos el año de edición ("
+                    + year + ") no está en el rango permitido");
         }
     }
 
@@ -38,14 +39,19 @@ public abstract class Libro extends Producto{
     @Override
     public String[] toArrayAtribNames() {
         String[] nombAtrib = {"Autor", "Year"};
-        
-        return super.toArrayAtribNames(); 
+        String[] resultante = new String[super.toArrayAtribNames().length + nombAtrib.length];
+        System.arraycopy(super.toArrayAtribNames(), 0, resultante, 0, super.toArrayAtribNames().length);
+        System.arraycopy(nombAtrib, 0, resultante, super.toArrayAtribNames().length, nombAtrib.length);
+        return resultante;
     }
-    
+
     @Override
     public String[] toArrayAtribValues() {
-        return super.toArrayAtribValues(); 
+        String[] valorAtrib = {this.getAutorLibro(), Double.toString(this.getYear())};
+        String[] resultante = new String[super.toArrayAtribValues().length + valorAtrib.length];
+        System.arraycopy(super.toArrayAtribValues(), 0, resultante, 0, super.toArrayAtribValues().length);
+        System.arraycopy(valorAtrib, 0, resultante, super.toArrayAtribValues().length, valorAtrib.length);
+        return resultante;
     }
-    
-    
+
 }

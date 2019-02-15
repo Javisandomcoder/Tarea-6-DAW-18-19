@@ -29,7 +29,7 @@ public class PruebaLibreria {
         System.out.println ("CREACIÓN DE PRODUCTOS");
         System.out.println ("---------------------");
         System.out.println ("Creando producto 0 con errores...");
- /*       try {<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        try {
             p= new LibroFisico ("Libro 1", 20.0, "Descripción L1", "Autor 1", 2018, 50000);
         } catch (IllegalArgumentException ex) {
             System.out.println ("Error al crear el producto 0: " + ex.getMessage());        
@@ -60,7 +60,7 @@ public class PruebaLibreria {
         listaProductos[1]= new LibroFisico ("Libro 2", 12.50, "Descripción L2", "Autor 2", 1979, 300);
         System.out.println ("Creado Producto 1.");
 
-
+/*
         System.out.println();
         System.out.println ("Creando producto 2 con errores...");
         try {
