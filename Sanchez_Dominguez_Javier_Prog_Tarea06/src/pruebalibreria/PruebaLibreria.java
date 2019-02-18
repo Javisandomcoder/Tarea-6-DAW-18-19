@@ -60,7 +60,7 @@ public class PruebaLibreria {
         listaProductos[1]= new LibroFisico ("Libro 2", 12.50, "Descripción L2", "Autor 2", 1979, 300);
         System.out.println ("Creado Producto 1.");
 
-/*
+
         System.out.println();
         System.out.println ("Creando producto 2 con errores...");
         try {
@@ -131,7 +131,7 @@ public class PruebaLibreria {
             }
             System.out.println ();
         }
-*///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
     }
     
@@ -153,11 +153,11 @@ public class PruebaLibreria {
         // Obtenemos el tipo de objeto (nombre de la clase)
         System.out.println ("Tipo de objeto: " + elemento.getClass().getName());
         // Obtenemos los arrays de nombres de atributos y valores de atributos
- //       String[] nombresAtributos= elemento.toArrayAtribNames();<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
- //       String[] valoresAtributos= elemento.toArrayAtribValues();<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        String[] nombresAtributos= elemento.toArrayAtribNames();
+        String[] valoresAtributos= elemento.toArrayAtribValues();
         // Mostramos el contenido de ambos arrays
- //       System.out.println ("Nombres de los atributos: " + Arrays.toString(nombresAtributos));<<<<<<<<<<<<<<<<
- //       System.out.println ("Valores de los atributos: " + Arrays.toString(valoresAtributos));<<<<<<<<<<<<<<<<<<<<<<<
+        System.out.println ("Nombres de los atributos: " + Arrays.toString(nombresAtributos));
+        System.out.println ("Valores de los atributos: " + Arrays.toString(valoresAtributos));
     }
 
 /*

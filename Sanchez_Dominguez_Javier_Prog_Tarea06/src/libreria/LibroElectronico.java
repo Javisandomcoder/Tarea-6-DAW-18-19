@@ -9,50 +9,55 @@ package libreria;
  *
  * @author javisandom
  */
-public class LibroElectronico extends Libro implements Downloadable{
+public class LibroElectronico extends Libro implements Downloadable {
+
     private int tamanioArch;
     private int descargasLibro;
     public static final int MIN_SIZE = 20;
     public static final int MAX_SIZE = 65535;
 
-    public LibroElectronico(String nombre, double precio, String descripcion, String autorLibro, int year, int tamanioArch, int descargasLibro) throws IllegalArgumentException {
+    public LibroElectronico(String nombre, double precio, String descripcion, String autorLibro, int year, int tamanioArch) throws IllegalArgumentException {
         super(nombre, precio, descripcion, autorLibro, year);
-        if(tamanioArch > MIN_SIZE && tamanioArch < MAX_SIZE){
+        if (tamanioArch > MIN_SIZE && tamanioArch < MAX_SIZE) {
             this.tamanioArch = tamanioArch;
             this.descargasLibro = descargasLibro;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Error: Parámetros de creación del libro electrónico inválidos"
-                    + " el tamaño (" + tamanioArch +") no está permitido" );
+                    + " el tamaño (" + tamanioArch + ") no está permitido");
         }
     }
-    
-    public int getSize(){
+
+    public int getSize() {
         return this.tamanioArch;
     }
-    
-    public int getNumDescargas(){
+
+    public int getNumDescargas() {
         return this.descargasLibro;
     }
 
     @Override
     public String[] toArrayAtribValues() {
-        return super.toArrayAtribValues(); //To change body of generated methods, choose Tools | Templates.
+        String[] valorAtrib = {Integer.toString(this.descargasLibro), Integer.toString(this.tamanioArch)};
+        String[] resultante = new String[super.toArrayAtribValues().length + valorAtrib.length];
+        System.arraycopy(super.toArrayAtribValues(), 0, resultante, 0, super.toArrayAtribValues().length);
+        System.arraycopy(valorAtrib, 0, resultante, super.toArrayAtribValues().length, valorAtrib.length);
+        return resultante;
     }
 
     @Override
     public String[] toArrayAtribNames() {
-        return super.toArrayAtribNames(); //To change body of generated methods, choose Tools | Templates.
+        String[] nombAtrib = {"tamanioArch", "descargasLibro"};
+        String[] resultante = new String[super.toArrayAtribNames().length + nombAtrib.length];
+        System.arraycopy(super.toArrayAtribNames(), 0, resultante, 0, super.toArrayAtribNames().length);
+        System.arraycopy(nombAtrib, 0, resultante, super.toArrayAtribNames().length, nombAtrib.length);
+        return resultante;
     }
-    
-    
-    
+
     @Override
     public double descargar(double anchoBanda) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double tiempo = this.getSize() / anchoBanda;
+        this.descargasLibro++;
+        return tiempo;
     }
-    
-    
-    
-    
+
 }

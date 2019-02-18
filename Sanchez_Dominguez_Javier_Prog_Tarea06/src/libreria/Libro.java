@@ -47,7 +47,7 @@ public abstract class Libro extends Producto {
 
     @Override
     public String[] toArrayAtribValues() {
-        String[] valorAtrib = {this.getAutorLibro(), Double.toString(this.getYear())};
+        String[] valorAtrib = {this.getAutorLibro(), Integer.toString(this.getYear())};
         String[] resultante = new String[super.toArrayAtribValues().length + valorAtrib.length];
         System.arraycopy(super.toArrayAtribValues(), 0, resultante, 0, super.toArrayAtribValues().length);
         System.arraycopy(valorAtrib, 0, resultante, super.toArrayAtribValues().length, valorAtrib.length);

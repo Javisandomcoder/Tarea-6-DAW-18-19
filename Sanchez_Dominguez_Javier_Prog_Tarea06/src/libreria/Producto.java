@@ -41,13 +41,13 @@ public abstract class Producto implements Arrayable{
 
     @Override
     public String[] toArrayAtribNames() {
-        String[] nombAtrib = {"Nombre", "Precio", "Descripción"};
+        String[] nombAtrib = {"Nombre", "Descripción", "Precio"};
         return nombAtrib;
     }
 
     @Override
     public String[] toArrayAtribValues() {
-        String[] valorAtrib = {this.getNombre(), Double.toString(this.getPrecio()), this.getDescripcion()};
+        String[] valorAtrib = {this.getNombre(), this.getDescripcion(), Double.toString(this.getPrecio())};
         return valorAtrib;
     }
 }

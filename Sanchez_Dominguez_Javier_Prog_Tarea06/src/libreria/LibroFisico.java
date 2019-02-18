@@ -32,8 +32,8 @@ public class LibroFisico extends Libro {
     
         @Override
     public String[] toArrayAtribNames() {
-        String[] nombAtrib = {Double.toString(this.getNumPaginas())};
-        String[] resultante = new String[nombAtrib.length + super.toArrayAtribNames().length];
+        String[] nombAtrib = {"numPag"};
+        String[] resultante = new String[super.toArrayAtribNames().length + nombAtrib.length];
         System.arraycopy(super.toArrayAtribNames(), 0, resultante, 0, super.toArrayAtribNames().length);
         System.arraycopy(nombAtrib, 0, resultante, super.toArrayAtribNames().length, nombAtrib.length);
         return resultante; 
@@ -41,7 +41,7 @@ public class LibroFisico extends Libro {
 
     @Override
     public String[] toArrayAtribValues() {
-        String[] valorAtrib = {Double.toString(this.getNumPaginas())};
+        String[] valorAtrib = {Integer.toString(this.getNumPaginas())};
         String[] resultante = new String[super.toArrayAtribValues().length + valorAtrib.length];
         System.arraycopy(super.toArrayAtribValues(), 0, resultante, 0, super.toArrayAtribValues().length);
         System.arraycopy(valorAtrib, 0, resultante, super.toArrayAtribValues().length, valorAtrib.length);
