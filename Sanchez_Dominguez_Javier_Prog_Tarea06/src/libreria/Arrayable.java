@@ -6,10 +6,21 @@
 package libreria;
 
 /**
- *
- * @author javisandom
+ * Interfaz que incorpora la capacidad de obtener el contenido del objeto en forma de arrays.
+ * 
+ * @author Javier Sánchez Domínguez
  */
 public interface Arrayable {
+    
+    /**
+     * Crea array con los nombres de los atributos
+     * @return 
+     */
     String[] toArrayAtribNames();
+    
+    /**
+     * Crea array con los nombres de los atributos
+     * @return 
+     */
     String[] toArrayAtribValues();
 }

@@ -6,9 +6,16 @@
 package libreria;
 
 /**
- *
- * @author javisandom
+ * Interfaz que incorpora la capacidad de ser descargado de la red.
+ * @author Javier Sánchez Domínguez
  */
 public interface Downloadable {
+    
+    /**
+     * Descarga el elemento por la red.
+     * 
+     * @param anchoBanda ancho de banda del sistema (en Kb/seg)
+     * @return tiempo que se tarda en descargar el elemento (en segundos)
+     */
     double descargar(double anchoBanda);
 }

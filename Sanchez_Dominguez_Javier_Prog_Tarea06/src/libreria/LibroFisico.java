@@ -6,8 +6,13 @@
 package libreria;
 
 /**
+ * Clase que representa un producto de tipo Libro Físico Los objetos de esta clase contienen atributos
+ * que permiten almacenar toda la información relativa a un producto de tipo libro físico (no electrónico) 
+ * en una tienda. Además de los atributos propios de un libro en abstracto, 
+ * deberá contener los específicos de un libro físico, que son: Número de páginas del libro.
  *
- * @author javisandom
+ * @version v0.1 febrero_2019
+ * @author Javier Sánchez Domínguez
  */
 public class LibroFisico extends Libro {
 
@@ -15,6 +20,16 @@ public class LibroFisico extends Libro {
     public static final int MIN_PAGINAS = 20;
     public static final int MAX_PAGINAS = 5000;
 
+    /**
+     * Crea un objeto LibroFisico con un nombre, precio, texto de descripción, autor, año de edición y número de páginas.
+     * @param nombre
+     * @param precio
+     * @param descripcion
+     * @param autorLibro
+     * @param year
+     * @param numPag
+     * @throws IllegalArgumentException 
+     */
     public LibroFisico(String nombre, double precio, String descripcion, String autorLibro, int year, int numPag) throws IllegalArgumentException {
         super(nombre, precio, descripcion, autorLibro, year);
         if (numPag > MIN_PAGINAS && numPag < MAX_PAGINAS) {
