@@ -21,7 +21,7 @@ public class LibroFisico extends Libro {
             this.numPag = numPag;
         } else {
             throw new IllegalArgumentException("Error: parámetros de creación del libro físico invalidos."
-                    + " El número (" + numPag + ") no está en el rango permitido");
+                    + " El número de páginas (" + numPag + ") no está en el rango permitido");
         }
 
     }

@@ -20,10 +20,9 @@ public class LibroElectronico extends Libro implements Downloadable {
         super(nombre, precio, descripcion, autorLibro, year);
         if (tamanioArch > MIN_SIZE && tamanioArch < MAX_SIZE) {
             this.tamanioArch = tamanioArch;
-            this.descargasLibro = descargasLibro;
         } else {
             throw new IllegalArgumentException("Error: Parámetros de creación del libro electrónico inválidos"
-                    + " el tamaño (" + tamanioArch + ") no está permitido");
+                    + " el tamaño (" + tamanioArch + "kb) no está permitido");
         }
     }
 
@@ -54,10 +53,15 @@ public class LibroElectronico extends Libro implements Downloadable {
     }
 
     @Override
-    public double descargar(double anchoBanda) {
-        double tiempo = this.getSize() / anchoBanda;
-        this.descargasLibro++;
-        return tiempo;
+    public double descargar(double anchoBanda) throws IllegalArgumentException{
+        if(anchoBanda <= 0){
+            throw new IllegalArgumentException("Error: Parámetro de descarga inválido. Ancho de banda incompatible (" +
+                    anchoBanda + ")");
+        }else{
+            double tiempo = this.getSize() / anchoBanda;
+            this.descargasLibro++;
+            return tiempo;
+        }
     }
 
 }

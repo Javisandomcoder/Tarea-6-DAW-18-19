@@ -23,7 +23,7 @@ public abstract class Producto implements Arrayable{
             this.descripcion = descripcion;
         }else{
             throw new IllegalArgumentException("Error: parámetros de creación del producto invalidos. "
-                    + "El precio " + String.format("%2f", this.precio) + " no está en el rango permitido");
+                    + "El precio " + String.format("%.2f", precio) + " no está en el rango permitido");
         }
     }
 
