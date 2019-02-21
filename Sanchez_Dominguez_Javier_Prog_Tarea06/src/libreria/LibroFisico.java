@@ -22,13 +22,13 @@ public class LibroFisico extends Libro {
 
     /**
      * Crea un objeto LibroFisico con un nombre, precio, texto de descripción, autor, año de edición y número de páginas.
-     * @param nombre
-     * @param precio
-     * @param descripcion
-     * @param autorLibro
-     * @param year
-     * @param numPag
-     * @throws IllegalArgumentException 
+     * @param nombre Título de libro
+     * @param precio Precio del libro
+     * @param descripcion Descripción del libro
+     * @param autorLibro Autor del libro
+     * @param year Año de publicación del libro
+     * @param numPag Número de paginas del libro
+     * @throws IllegalArgumentException Si algunos de los parámetros no es válido
      */
     public LibroFisico(String nombre, double precio, String descripcion, String autorLibro, int year, int numPag) throws IllegalArgumentException {
         super(nombre, precio, descripcion, autorLibro, year);
@@ -41,10 +41,18 @@ public class LibroFisico extends Libro {
 
     }
     
+    /**
+     * Devuelve el número de páginas del libro
+     * @return El número de páginas del libro
+     */
     public int getNumPaginas(){
         return this.numPag;
     }
     
+    /**
+     * Genera array de nombres de atributos
+     * @return Array de String con los nombres de los atributos del objeto
+     */
         @Override
     public String[] toArrayAtribNames() {
         String[] nombAtrib = {"numPag"};
@@ -53,7 +61,11 @@ public class LibroFisico extends Libro {
         System.arraycopy(nombAtrib, 0, resultante, super.toArrayAtribNames().length, nombAtrib.length);
         return resultante; 
     }
-
+    
+    /**
+     * Genera array de valores de atributos
+     * @return Array de String con los valores de los atributos del objeto
+     */
     @Override
     public String[] toArrayAtribValues() {
         String[] valorAtrib = {Integer.toString(this.getNumPaginas())};
