@@ -85,7 +85,7 @@ public class LibroElectronico extends Libro implements Downloadable {
 
     /**
      * Descarga el libro electrónico por la red
-     * @param AnchoBanda Ancho de banda del sistema (en kb/seg)
+     * @param anchoBanda Ancho de banda del sistema (en kb/seg)
      * @return Tiempo de duración de la descarga (en segundos)
      * @throws IllegalArgumentException si el anco de banda no es mayor que cero
      */

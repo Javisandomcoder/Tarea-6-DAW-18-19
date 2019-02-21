@@ -14,13 +14,13 @@ public interface Arrayable {
     
     /**
      * Crea array con los nombres de los atributos
-     * @return 
+     * @return Array con los nombres de los atributos
      */
     String[] toArrayAtribNames();
     
     /**
      * Crea array con los nombres de los atributos
-     * @return 
+     * @return Array con los valores de los atributos
      */
     String[] toArrayAtribValues();
 }
